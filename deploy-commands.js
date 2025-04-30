@@ -1,4 +1,4 @@
-import ('dotenv').config();
+import ('dotenv')
 const fs = require('fs');
 const path = require('path');
 const { REST, Routes } = require('discord.js');
