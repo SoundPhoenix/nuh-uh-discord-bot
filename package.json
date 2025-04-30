@@ -1,0 +1,17 @@
+{
+  "name": "nuh-uh",
+  "version": "1.0.0",
+  "description": "A Discord bot that responds to mentions and has a /ping command",
+  "main": "bot.js",
+  "type": "module",
+  "scripts": {
+    "start": "node bot.js",
+    "deploy": "node deploy-commands.js"
+  },
+  "author": "Tanner Schermerhorn",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5"
+  }
+}
