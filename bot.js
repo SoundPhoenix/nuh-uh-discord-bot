@@ -1,7 +1,9 @@
-import ('dotenv')
-const fs = require('fs');
-const path = require('path');
-const { Client, Collection, GatewayIntentBits } = require('discord.js');
+import { Client, Collection, GatewayIntentBits } from 'discord.js';
+import fs from 'fs';
+import path from 'path';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const client = new Client({
   intents: [
@@ -18,7 +20,7 @@ const commandsPath = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
-  const command = require(`./commands/${file}`);
+  const command = await import(`./commands/${file}`);
   client.commands.set(command.data.name, command);
 }
 
