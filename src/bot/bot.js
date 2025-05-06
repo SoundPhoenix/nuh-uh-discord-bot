@@ -1,7 +1,14 @@
 import { Client, Collection, GatewayIntentBits } from 'discord.js';
 import fs from 'fs';
 import path from 'path';
-const config = ('../config/config.js');
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import config from '../config/config.js'; // assuming this file uses ES module syntax
+
+// Setup __dirname in ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -20,7 +27,7 @@ const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('
 
 for (const file of commandFiles) {
   const command = await import(`./commands/${file}`);
-  client.commands.set(command.data.name, command);
+  client.commands.set(command.default.data.name, command.default);
 }
 
 client.once('ready', () => {
@@ -48,3 +55,4 @@ client.on('interactionCreate', async interaction => {
 });
 
 client.login(process.env.DISCORD_TOKEN);
+
