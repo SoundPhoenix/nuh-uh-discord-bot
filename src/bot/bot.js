@@ -1,7 +1,7 @@
 import { Client, Collection, GatewayIntentBits } from 'discord.js';
 import fs from 'fs';
 import path from 'path';
-const config = require ('../config/config.js');
+const config = ('../config/config.js');
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
