@@ -5,7 +5,7 @@
   "main": "/src/bot/bot.js",
   "type": "module",
   "scripts": {
-    "start": "node bot.js",
+    "start": "node /src/botbot.js",
     "deploy": "node deploy-commands.js"
   },
   "author": "Tanner Schermerhorn",
