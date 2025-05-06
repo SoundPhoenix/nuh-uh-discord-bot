@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A Discord bot that responds to mentions and has a /ping command",
   "main": "src/bot/bot.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "start": "node src/bot/bot.js",
     "deploy": "node deploy-commands.js"
