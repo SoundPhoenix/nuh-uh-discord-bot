@@ -5,7 +5,7 @@
   "main": "/src/bot/bot.js",
   "type": "module",
   "scripts": {
-    "start": "node /src/botbot.js",
+    "start": "node /Users/Tanner/Documents/nuh-uh-discord-bot/src/bot>/src/bot/bot.js",
     "deploy": "node deploy-commands.js"
   },
   "author": "Tanner Schermerhorn",
