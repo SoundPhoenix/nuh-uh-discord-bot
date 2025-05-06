@@ -2,7 +2,7 @@
   "name": "nuh-uh",
   "version": "1.0.0",
   "description": "A Discord bot that responds to mentions and has a /ping command",
-  "main": "bot.js",
+  "main": "/src/bot/bot.js",
   "type": "module",
   "scripts": {
     "start": "node bot.js",

@@ -1,10 +1,7 @@
 import { Client, Collection, GatewayIntentBits } from 'discord.js';
 import fs from 'fs';
 import path from 'path';
-import dotenv from 'dotenv';
-
-dotenv.config();
-
+const config = require ('../config/config.js');
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -12,6 +9,8 @@ const client = new Client({
     GatewayIntentBits.MessageContent
   ]
 });
+
+console.log(config.token);
 
 client.commands = new Collection();
 
