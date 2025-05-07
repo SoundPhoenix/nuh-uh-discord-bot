@@ -22,7 +22,7 @@ console.log(config.token);
 client.commands = new Collection();
 
 // Load command files
-const commandsPath = path.join(__dirname, 'commands');
+const commandsPath = path.join(__dirname, '/../commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
