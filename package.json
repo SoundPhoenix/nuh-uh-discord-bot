@@ -11,7 +11,7 @@
   "author": "Tanner Schermerhorn",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "^14.14.1",
+    "discord.js": "^14.19.3",
     "dotenv": "^16.5.0"
   }
 }
