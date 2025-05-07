@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/bot/bot.js",
-    "deploy": "node deploy-commands.js"
+    "deploy": "node register-commands.js"
   },
   "author": "Tanner Schermerhorn",
   "license": "MIT",

@@ -1,4 +1,6 @@
 import dotenv from 'dotenv';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 import { Client, Collection, GatewayIntentBits } from 'discord.js';
 import fs from 'fs';
@@ -7,8 +9,6 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import config from '../config/config.js'; // assuming this file uses ES module syntax
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const client = new Client({
   intents: [
@@ -40,7 +40,7 @@ client.once('ready', () => {
 });
 
 client.on('messageCreate', message => {
-  if (message.mentions.has(process.env.BOT_ID) && !message.author.bot) {
+  if (message.mentions.has(client.user) && !message.author.bot) {
     message.reply('nuh uh');
   }
 });
