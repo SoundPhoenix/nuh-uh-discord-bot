@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import { Client, Collection, GatewayIntentBits } from 'discord.js';
 import fs from 'fs';
 import path from 'path';
@@ -57,6 +59,6 @@ client.on('interactionCreate', async interaction => {
     await interaction.reply({ content: 'There was an error executing that command.', ephemeral: true });
   }
 });
-
+console.log('TOKEN:', process.env.DISCORD_TOKEN);
 client.login(process.env.DISCORD_TOKEN);
 
