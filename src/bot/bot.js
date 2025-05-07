@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-dotenv.config();
+dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 import { Client, Collection, GatewayIntentBits } from 'discord.js';
 import fs from 'fs';
 import path from 'path';
@@ -7,9 +7,8 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import config from '../config/config.js'; // assuming this file uses ES module syntax
 
-// Setup __dirname in ESM
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = path.dirname(__filename);
 
 const client = new Client({
   intents: [
