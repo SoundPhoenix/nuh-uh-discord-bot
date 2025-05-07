@@ -22,11 +22,14 @@ console.log(config.token);
 client.commands = new Collection();
 
 // Load command files
+import { pathToFileURL } from 'url';
+
 const commandsPath = path.join(__dirname, '../commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
-  const command = await import(path.join(commandsPath, file));
+  const filePath = path.join(commandsPath, file);
+  const command = await import(pathToFileURL(filePath).href);
   client.commands.set(command.default.data.name, command.default);
 }
 
